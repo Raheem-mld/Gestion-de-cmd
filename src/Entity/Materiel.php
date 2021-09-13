@@ -32,6 +32,11 @@ class Materiel
      */
     private $datedereception;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $affecter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Materiel
     public function setDatedereception(\DateTimeInterface $datedereception): self
     {
         $this->datedereception = $datedereception;
+
+        return $this;
+    }
+
+    public function getAffecter(): ?bool
+    {
+        return $this->affecter;
+    }
+
+    public function setAffecter(bool $affecter): self
+    {
+        $this->affecter = $affecter;
 
         return $this;
     }
