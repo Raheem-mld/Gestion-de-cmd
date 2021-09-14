@@ -2,7 +2,131 @@
 
 {% block title %}Dashboard{% endblock %}
 
-{% block body %}
+{% block stylesheets %}
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/style/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/style/style.css">
 
+{% endblock %}
+
+{% block body %}
+<h1 class="text-bold text-gray bg-warning text-center">All materials</h1>
+<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://bootdey.com/img/Content/avatar/avatar7.png);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Home 1</a>
+                </li>
+                <li>
+                    <a href="#">Home 2</a>
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+	            </ul>
+	          </li>
+	          <li>
+	              <a href="#">About</a>
+	          </li>
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="#">Portfolio</a>
+	          </li>
+	          <li>
+              <a href="#">Contact</a>
+	          </li>
+	        </ul>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">N° inventaire</th>
+                <th scope="col">garantie</th>
+                <th scope="col">Date de reception</th>
+                <th scope="col">affecter</th>
+                <th scope="col">designation</th>
+                <th scope="col">Nom agence</th>
+                <th scope="col">Nom founisseur</th>
+                <th scope="col">Nom service</th>
+                <th scope="col">Type Material</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                <th scope="row">Active</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+                <th scope="row">Active</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+
+    <script src="/assets/script/jquery.min.js"></script>
+    <script src="/assets/script/popper.js"></script>
+    <script src="/assets/script/bootstrap.min.js"></script>
+    <script src="/assets/script/main.js"></script>
 
 {% endblock %}
