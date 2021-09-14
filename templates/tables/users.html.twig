@@ -11,7 +11,40 @@
 {% endblock %}
 
 {% block body %}
+<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://bootdey.com/img/Content/avatar/avatar7.png);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="{{path('dashboard')}}"  aria-expanded="false" class="dropdown-toggle">Materials</a>
+	           
+	          </li>
+	          <li>
+	              <a href="{{path('agencies')}}">Agencies</a>
+	          </li>
+	          <li>
+              <a href="{{path('agents')}}"  aria-expanded="false" class="dropdown-toggle">Agents</a>
+	          </li>
+	          <li>
+              <a href="{{path('fournisseurs')}}">Fournisseurs</a>
+	          </li>
+	          <li>
+              <a href="{{path('services')}}">Services</a>
+	          </li>
+	          <li>
+              <a href="{{path('type_material')}}">Type Materials</a>
+	          </li>
+	          <li>
+              <a href="{{path('designations')}}">Designations</a>
+	          </li>
+	          <li>
+              <a href="{{path('users')}}">Users</a>
+	          </li>
+	        </ul>
 
+	      </div>
+    	</nav>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
 
