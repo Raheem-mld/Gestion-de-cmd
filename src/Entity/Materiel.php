@@ -37,6 +37,32 @@ class Materiel
      */
     private $affecter;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Fournisseur::class, inversedBy="materiels")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $fournisseur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Agencies::class, inversedBy="materiels")
+     */
+    private $agencies;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=TypeMateriel::class, inversedBy="materiels")
+     */
+    private $typeMaterial;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Designation::class, inversedBy="materiels")
+     */
+    private $designation;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Services::class, inversedBy="materiels")
+     */
+    private $service;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +112,66 @@ class Materiel
     public function setAffecter(bool $affecter): self
     {
         $this->affecter = $affecter;
+
+        return $this;
+    }
+
+    public function getFournisseur(): ?Fournisseur
+    {
+        return $this->fournisseur;
+    }
+
+    public function setFournisseur(?Fournisseur $fournisseur): self
+    {
+        $this->fournisseur = $fournisseur;
+
+        return $this;
+    }
+
+    public function getAgencies(): ?Agencies
+    {
+        return $this->agencies;
+    }
+
+    public function setAgencies(?Agencies $agencies): self
+    {
+        $this->agencies = $agencies;
+
+        return $this;
+    }
+
+    public function getTypeMaterial(): ?TypeMateriel
+    {
+        return $this->typeMaterial;
+    }
+
+    public function setTypeMaterial(?TypeMateriel $typeMaterial): self
+    {
+        $this->typeMaterial = $typeMaterial;
+
+        return $this;
+    }
+
+    public function getDesignation(): ?Designation
+    {
+        return $this->designation;
+    }
+
+    public function setDesignation(?Designation $designation): self
+    {
+        $this->designation = $designation;
+
+        return $this;
+    }
+
+    public function getService(): ?Services
+    {
+        return $this->service;
+    }
+
+    public function setService(?Services $service): self
+    {
+        $this->service = $service;
 
         return $this;
     }
