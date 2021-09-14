@@ -75,9 +75,9 @@
                 </td>
                 <td>{{material.designation}}</td>
                 <td>{{material.agencies}}</td>
-                <td>{{material.fournisseur}}</td>
+                <td>{{material.fournisseur.firstName}} {{material.fournisseur.lastName}}</td>
                 <td>{{material.service}}t</td>
-                <td>C{{material.typeMaterial}}</td>
+                <td>{# C{{material.typeMaterial}} #}</td>
                 <td>update</td>
                 </tr>
             {% endfor %}

@@ -119,6 +119,6 @@ class Agencies
 
     public function __toString()
     {
-        return "{$this->agencyname} {$this->materiels}";
+        return $this->agencyname;
     }
 }
