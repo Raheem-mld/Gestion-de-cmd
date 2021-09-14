@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Materiel;
 use App\Form\Type\TaskType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -64,7 +65,11 @@ class HomeController extends AbstractController
      */
     public function dashboard(): Response
     {
-        return $this->render('home/dashboard.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Materiel::class);
+        $materials = $repo->findAll();
+        return $this->render('home/dashboard.html.twig',[
+            'materials' =>$materials,
+        ]);
     }
 
 }

@@ -18,41 +18,29 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://bootdey.com/img/Content/avatar/avatar7.png);"></a>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-	            </ul>
+	            <a href="#homeSubmenu"  aria-expanded="false" class="dropdown-toggle">Materials</a>
+	           
 	          </li>
 	          <li>
-	              <a href="#">About</a>
+	              <a href="#">Agencies</a>
 	          </li>
 	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-              </ul>
+              <a href="#pageSubmenu"  aria-expanded="false" class="dropdown-toggle">Agents</a>
 	          </li>
 	          <li>
-              <a href="#">Portfolio</a>
+              <a href="#">Fournisseurs</a>
 	          </li>
 	          <li>
-              <a href="#">Contact</a>
+              <a href="#">Services</a>
+	          </li>
+	          <li>
+              <a href="#">Type Materials</a>
+	          </li>
+	          <li>
+              <a href="#">Designations</a>
+	          </li>
+	          <li>
+              <a href="#">Users</a>
 	          </li>
 	        </ul>
 
@@ -98,7 +86,7 @@
                 <th scope="col">N° inventaire</th>
                 <th scope="col">garantie</th>
                 <th scope="col">Date de reception</th>
-                <th scope="col">affecter</th>
+                <th scope="col">mise en service</th>
                 <th scope="col">designation</th>
                 <th scope="col">Nom agence</th>
                 <th scope="col">Nom founisseur</th>
@@ -108,18 +96,27 @@
                 </tr>
             </thead>
             <tbody>
+            {% for material in materials %}
                 <tr class="table-active">
-                <th scope="row">Active</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <th scope="row">Active</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
+                <th scope="row">{{material.numeroinventaire}}</th>
+                <td>{{material.garantie}}</td>
+                <td>{{material.datedereception | date("d/m/y")}}</td>
+                <td>
+                {% if material.affecter == 1 %}
+                oui
+                {% elseif material.affecter == 0 %}
+                non
+                {% endif %}
+                </td>
+                <td>{{material.designation}}</td>
+                <td>{{material.agencies}}</td>
+                <td>{{material.fournisseur}}</td>
+                <td>{{material.service}}t</td>
+                <td>C{{material.typeMaterial}}</td>
+                <td>update</td>
                 </tr>
+            {% endfor %}
+                
             </tbody>
         </table>
 	</div>
