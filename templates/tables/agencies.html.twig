@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Agencies{% endblock %}
 
 {% block stylesheets %}
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block body %}
+
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
@@ -48,36 +49,16 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">N° inventaire</th>
-                <th scope="col">garantie</th>
-                <th scope="col">Date de reception</th>
-                <th scope="col">mise en service</th>
-                <th scope="col">designation</th>
-                <th scope="col">Nom agence</th>
-                <th scope="col">Nom founisseur</th>
-                <th scope="col">Nom service</th>
-                <th scope="col">Type Material</th>
+                <th scope="col">Agency Name</th>
+                <th scope="col">agent</th>
                 <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-            {% for material in materials %}
+            {% for agency in agencies %}
                 <tr class="table-active">
-                <th scope="row">{{material.numeroinventaire}}</th>
-                <td>{{material.garantie}}</td>
-                <td>{{material.datedereception | date("d/m/y")}}</td>
-                <td>
-                {% if material.affecter == 1 %}
-                oui
-                {% elseif material.affecter == 0 %}
-                non
-                {% endif %}
-                </td>
-                <td>{{material.designation}}</td>
-                <td>{{material.agencies}}</td>
-                <td>{{material.fournisseur}}</td>
-                <td>{{material.service}}t</td>
-                <td>C{{material.typeMaterial}}</td>
+                <th scope="row">{{agency.agencyname}}</th>
+                <td>{# {{agency.agent}} #}</td>
                 <td>update</td>
                 </tr>
             {% endfor %}
@@ -86,7 +67,7 @@
         </table>
 	</div>
 
- <script src="/assets/script/jquery.min.js"></script>
+    <script src="/assets/script/jquery.min.js"></script>
     <script src="/assets/script/popper.js"></script>
     <script src="/assets/script/bootstrap.min.js"></script>
     <script src="/assets/script/main.js"></script>

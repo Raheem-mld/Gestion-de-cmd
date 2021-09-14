@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Designations{% endblock %}
 
 {% block stylesheets %}
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block body %}
+
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
@@ -61,32 +62,26 @@
                 </tr>
             </thead>
             <tbody>
-            {% for material in materials %}
+            
                 <tr class="table-active">
-                <th scope="row">{{material.numeroinventaire}}</th>
-                <td>{{material.garantie}}</td>
-                <td>{{material.datedereception | date("d/m/y")}}</td>
-                <td>
-                {% if material.affecter == 1 %}
-                oui
-                {% elseif material.affecter == 0 %}
-                non
-                {% endif %}
-                </td>
-                <td>{{material.designation}}</td>
-                <td>{{material.agencies}}</td>
-                <td>{{material.fournisseur}}</td>
-                <td>{{material.service}}t</td>
-                <td>C{{material.typeMaterial}}</td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>update</td>
                 </tr>
-            {% endfor %}
+           
                 
             </tbody>
         </table>
 	</div>
 
- <script src="/assets/script/jquery.min.js"></script>
+    <script src="/assets/script/jquery.min.js"></script>
     <script src="/assets/script/popper.js"></script>
     <script src="/assets/script/bootstrap.min.js"></script>
     <script src="/assets/script/main.js"></script>
