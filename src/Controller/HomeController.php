@@ -101,6 +101,8 @@ class HomeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Agent::class);
         $agents = $repo->findAll();
+        
+       // dd($agents);
         return $this->render('tables/agents.html.twig',[
             'agents' => $agents,
         ]);
@@ -113,6 +115,7 @@ class HomeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Designation::class);
         $designations = $repo->findAll();
+        //dd($designations);
         return $this->render('tables/designations.html.twig',[
             'designations' => $designations,
         ]);
@@ -137,6 +140,7 @@ class HomeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Services::class);
         $services = $repo->findAll();
+        //dd($services);
         return $this->render('tables/services.html.twig',[
             'services' => $services,
         ]);
@@ -149,8 +153,9 @@ class HomeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(TypeMateriel::class);
         $typeMateroials = $repo->findAll();
+        //dd($typeMateroials);
         return $this->render('tables/typeMaterial.html.twig',[
-            'type' => $typeMateroials,
+            'types' => $typeMateroials,
         ]);
     }
 

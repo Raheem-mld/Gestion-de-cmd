@@ -82,33 +82,23 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">N° inventaire</th>
-                <th scope="col">garantie</th>
-                <th scope="col">Date de reception</th>
-                <th scope="col">mise en service</th>
-                <th scope="col">designation</th>
-                <th scope="col">Nom agence</th>
-                <th scope="col">Nom founisseur</th>
-                <th scope="col">Nom service</th>
-                <th scope="col">Type Material</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
+            {% for fournisseur in fournisseurs %}
+              
             
                 <tr class="table-active">
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{fournisseur.firstName}}</td>
+                <td>{{fournisseur.lastName}}</td>
+                <td>{{fournisseur.phone}}</td>
                 <td>update</td>
                 </tr>
-            
+            {% endfor %}
                 
             </tbody>
         </table>

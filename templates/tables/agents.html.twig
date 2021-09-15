@@ -82,30 +82,20 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">N° inventaire</th>
-                <th scope="col">garantie</th>
-                <th scope="col">Date de reception</th>
-                <th scope="col">mise en service</th>
-                <th scope="col">designation</th>
-                <th scope="col">Nom agence</th>
-                <th scope="col">Nom founisseur</th>
-                <th scope="col">Nom service</th>
-                <th scope="col">Type Material</th>
+                <th scope="col">N° Agent</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Agency</th>
                 <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="table-active">
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                {% for agent in agents %}
+                <th scope="row">{{agent.agentnumber}}</th>
+                <td>{{agent.agentname}}</td>
+                <td>{{agent.agencies}}</td>
                 <td>update</td>
+                {% endfor %}
                 </tr>
                 
             </tbody>
