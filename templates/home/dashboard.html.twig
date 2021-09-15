@@ -27,7 +27,7 @@
               <a href="{{path('agents')}}"  aria-expanded="false" class="dropdown-toggle">Agents</a>
 	          </li>
 	          <li>
-              <a href="{{path('fournisseurs')}}">Fournisseurs</a>
+              <a href="{{path('fournisseurs')}}">Suppliers</a>
 	          </li>
 	          <li>
               <a href="{{path('services')}}">Services</a>
@@ -81,14 +81,14 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">N° inventaire</th>
-                <th scope="col">garantie</th>
-                <th scope="col">Date de reception</th>
-                <th scope="col">mise en service</th>
-                <th scope="col">designation</th>
-                <th scope="col">Nom agence</th>
-                <th scope="col">Nom founisseur</th>
-                <th scope="col">Nom service</th>
+                <th scope="col">N° inventory</th>
+                <th scope="col">Guarantee</th>
+                <th scope="col">Date of receipt</th>
+                <th scope="col">Commissioning</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Agency name</th>
+                <th scope="col">Supplier name</th>
+                <th scope="col">Service name</th>
                 <th scope="col">Type Material</th>
                 <th scope="col">Action</th>
                 </tr>
@@ -108,15 +108,9 @@
                 </td>
                 <td>{{material.designation}}</td>
                 <td>{{material.agencies}}</td>
-<<<<<<< HEAD
                 <td>{{material.fournisseur.firstName}} {{material.fournisseur.lastName}}</td>
                 <td>{{material.service}}t</td>
                 <td>{# C{{material.typeMaterial}} #}</td>
-=======
-                <td>{{material.fournisseur.lastName}}</td>
-                <td>{{material.service}}t</td>
-                <td>{{material.typeMaterial}}</td>
->>>>>>> 8597c9716ec9931d3422869b0deadcb876e046cf
                 <td>update</td>
                 </tr>
             {% endfor %}
