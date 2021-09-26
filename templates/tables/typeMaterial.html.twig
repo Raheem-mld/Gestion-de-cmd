@@ -27,7 +27,7 @@
               <a href="{{path('agents')}}"  aria-expanded="false" class="dropdown-toggle">Agents</a>
 	          </li>
 	          <li>
-              <a href="{{path('fournisseurs')}}">Fournisseurs</a>
+              <a href="{{path('fournisseurs')}}">Suppliers</a>
 	          </li>
 	          <li>
               <a href="{{path('services')}}">Services</a>
@@ -64,15 +64,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -94,7 +85,17 @@
                 <th scope="row">{{type.typemateriel}}</th>
                 <th scope="row">{% if type.ventoryornot %} vrai {% elseif type.ventoryornot %} faux {% endif %}</th>
                 <td>{{type.designation}}</td>
-                <td>update</td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-primary">
+                    <i class="fa fa-eye"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-warning">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-danger">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </td>
                 </tr>
             {% endfor %}
                 
