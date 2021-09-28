@@ -103,7 +103,7 @@
                 <td>{{material.service}}</td>
                 <td>{{material.typeMaterial}}</td>
                 <td>
-                  <a href="#" class="btn btn-sm btn-primary">
+                  <a href="{{material.id}}" data-toggle="modal" data-target="#show" class="btn btn-sm btn-primary">
                     <i class="fa fa-eye"></i>
                   </a>
                   <a href="#" class="btn btn-sm btn-warning">
@@ -114,6 +114,38 @@
                   </a>
                 </td>
                 </tr>
+                <!-- Modal -->
+              <div class="modal fade" id="show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{material.designation}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <b>N° inventory : </b>{{material.numeroinventaire}} <hr>
+                      <b>Guarantee : </b>{{material.garantie}} <hr>
+                      <b>Date of receipt : </b>{{material.datedereception | date("d/m/y")}} <hr>
+                      <b>Commissioning : </b>{% if material.affecter == 1 %}
+                oui
+                {% elseif material.affecter == 0 %}
+                non
+                {% endif %}<hr>
+                      <b>Designationt : </b>{{material.designation}} <hr>
+                      <b>Agency name : </b>{{material.agencies}} <hr>
+                      <b>Supplier name : </b>{{material.fournisseur.firstName}} {{material.fournisseur.lastName}} <hr>
+                      <b>Service name : </b>{{material.service}} <hr>
+                      <b>Type Material : </b>{{material.typeMaterial}}
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% endfor %}
                 
             </tbody>
