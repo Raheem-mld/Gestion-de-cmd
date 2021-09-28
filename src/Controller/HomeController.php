@@ -13,6 +13,7 @@ use App\Entity\User;
 use App\Form\Type\TaskType;
 use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -75,8 +76,48 @@ class HomeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Materiel::class);
         $materials = $repo->findAll();
+        //$material = $repo->find($id);
         return $this->render('home/dashboard.html.twig',[
             'materials' =>$materials,
+        ]);
+    }
+    /**
+     * @Route("/dashboard/{id}", name="dashboard_edit")
+     */
+    public function dashboardedit(Request $request, int $id): Response
+    {
+        $repo = $this->getDoctrine()->getRepository(Materiel::class);
+        $materials = $repo->findAll();
+        $material = $repo->find($id);
+    
+        $form = $this->createFormBuilder($material)
+                    ->add('numeroinventaire', TextType::class)
+                    ->add('garantie', TextType::class)
+                    ->add('datedereception', TextType::class)
+                    ->add('affecter', TextType::class)
+                    ->add('fournisseur', TextType::class)
+                    ->add('agencies', TextType::class)
+                    ->add('typeMaterial', TextType::class)
+                    ->add('designation', TextType::class)
+                    ->add('service', TextType::class)
+                    
+                    ->add('submit', SubmitType::class)
+                    ->getForm(); 
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $material = $form->getData();
+
+            
+             $entityManager = $this->getDoctrine()->getManager();
+             $entityManager->persist($material);
+             $entityManager->flush();
+
+            return $this->redirectToRoute('dashboard');
+        }
+        return $this->render('home/dashboard.html.twig',[
+            'materials' =>$materials,
+            'form' => $form->createView(),
         ]);
     }
 
